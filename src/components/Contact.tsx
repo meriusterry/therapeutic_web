@@ -28,33 +28,37 @@ const Contact: React.FC = () => {
     await new Promise((res) => setTimeout(res, 1000));
 
     // Show success feedback
-    setFeedback("Thank you! Your message has been submitted.");
+    setFeedback("Thank you! Your message has been submitted. We will contact you soon");
     setFormData({ name: "", email: "", subject: "", message: "" });
     setIsSending(false);
   };
 
   return (
-    <section id="contact" className="py-20 px-6 bg-white">
+    <section id="contact" className="py-20 px-6 bg-blue-100">
       <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
         Contact Me
       </h2>
 
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-10">
+      <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-start gap-10">
         {/* Contact info */}
-        <div className="flex-1 bg-blue-50 p-10 rounded-lg shadow">
-          <p className="text-xl text-gray-700 mb-4">
-            📞 Phone: <strong>076 196 9277</strong>
+        <div className="flex-1 bg-blue-50 p-6 rounded-lg shadow mt-10">
+          <p className="text-md text-gray-700 mb-0">
+            Phone:
           </p>
-          <p className="text-xl text-gray-700 mb-2">
-            ✉ Email: <strong>masheleprosperityphum@gmail.com</strong>
+          <p className="text-md text-gray-700 mb-2">
+             <strong>076 196 9267</strong>
+          </p>
+          <p className="text-md text-gray-700 mb-0">
+            Email:
+          </p>
+          <p className="text-md text-gray-700 mb-6">
+            <strong>masheleprosperityphum@gmail.com</strong>
           </p>
           
           
-          <p className="text-xl text-gray-700 mb-6">
-            📍 Location: <strong>Mpumalanga / Hazyview / Online</strong>
-          </p>
+       
           <a
-            href="https://wa.me/27761969277"
+            href="https://wa.me/27761969267"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -65,13 +69,23 @@ const Contact: React.FC = () => {
 
         
 
-          {feedback && (
-            <p className="mt-4 text-center text-green-600">{feedback}</p>
-          )}
+         
         </div>
 
+
+ 
           {/* Contact form */}
           <form onSubmit={handleSubmit} className="space-y-4">
+
+           {feedback && (
+  <p className="mt-4 text-center text-green-600  hover:bg-green-700 font-bold text-xl drop-shadow-md">
+    {feedback}
+  </p>
+)}
+ <p className="text-md text-gray-700 mb-0">
+          Contact form
+          </p>
+
             <input
               type="text"
               name="name"
@@ -118,7 +132,7 @@ const Contact: React.FC = () => {
               className={`w-full px-6 py-3 rounded-lg text-white transition ${
                 isSending
                   ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-blue-600 hover:bg-blue-700"
+                  : "bg-green-600 hover:bg-green-700"
               }`}
             >
               {isSending ? "Sending..." : "Send Message"}
