@@ -1,8 +1,10 @@
 import React from "react";
+import Logo from "../assets/images/bg.jpeg"; // adjust relative path
 
 const Footer: React.FC = () => (
   <footer className="bg-gray-900 dark:bg-gray-950 text-white dark:text-gray-300 py-6 px-6">
     <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10 text-center md:text-left">
+
 
       {/* Branding */}
       <div>
@@ -11,8 +13,8 @@ const Footer: React.FC = () => (
         </h2>
         <p className="text-sm text-gray-400 leading-6">
             Social Worker in private practice BSW(UJ), EAP(UP)  <br />
-          Practice Number: <span className="text-blue-400">1286846</span> <br />
-          SACSSP Number: <span className="text-blue-400">1055164</span>
+          Practice No: <span className="text-blue-400">1286846</span> <br />
+          SACSSP No: <span className="text-blue-400">1055164</span>
         </p>
       </div>
 
