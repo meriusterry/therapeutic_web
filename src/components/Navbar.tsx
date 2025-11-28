@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Logo from "../assets/images/bg.jpeg"; // adjust relative path
+
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +18,7 @@ const Navbar: React.FC = () => {
 
   // ⭐ Typing Animation Effect
   useEffect(() => {
-    const typingSpeed = isDeleting ? 180 : 240;
+    const typingSpeed = isDeleting ? 60 : 240;
     const timeout = setTimeout(() => {
       setDisplayedText(fullText.substring(0, index));
 
@@ -59,18 +61,28 @@ const Navbar: React.FC = () => {
     <nav className="w-full bg-gray-900 dark:bg-gray-950 text-white shadow-md fixed top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
 
-        {/* LOGO + Typing Animation */}
-        <h1
-          className="text-2xl font-bold text-white cursor-pointer hover:text-blue-600 transition duration-300 text-center"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        >
-          MASHELE THERAPEUTIC SERVICE
+       <div
+  className="cursor-pointer"
+  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+>
+  {/* Logo + Main Text */}
+  <h1 className="flex items-center gap-2 text-2xl font-bold text-white hover:text-blue-600 transition duration-300">
+    <img
+      src={Logo}
+      alt="Mashele Therapeutic"
+      className="w-14 h-12 object-cover rounded-full"
+    />
+    <span>MASHELE THERAPEUTIC SERVICE</span>
+  </h1>
 
-          <span className="block text-sm font-semibold text-green-400 mt-0 transition duration-300">
-            {displayedText}
-            <span className="blinking-cursor">|</span>
-          </span>
-        </h1>
+  {/* Typing Animation BELOW */}
+  <span className="block text-sm font-semibold text-green-400 ml-20 transition duration-300">
+    {displayedText}
+    <span className="blinking-cursor">|</span>
+  </span>
+</div>
+
+
 
         {/* Desktop Links */}
         <ul className="hidden md:flex gap-8 text-lg">
