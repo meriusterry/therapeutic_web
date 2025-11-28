@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
 >
   {/* Logo + Main Text */}
-  <h1 className="flex items-center gap-2 text-2xl font-bold text-white hover:text-blue-600 transition duration-300">
+  <h1 className="flex items-center gap-2 text-xl font-bold text-white hover:text-blue-600 transition duration-300">
     <img
       src={Logo}
       alt="Mashele Therapeutic"
@@ -85,7 +85,7 @@ const Navbar: React.FC = () => {
 
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex gap-8 text-lg">
+        <ul className="hidden md:flex gap-6 text-lg">
           {links.map((link) => (
             <li key={link} className="relative group">
               <a
@@ -122,7 +122,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Slide-In Menu */}
       <div
         className={`
-          md:hidden fixed top-0 right-0 h-half bg-white shadow-lg
+          md:hidden fixed top-0 right-0 h-half bg-gray-900 shadow-lg
           w-1/2 transition-transform duration-300
           ${isOpen ? "translate-x-0" : "translate-x-full"}
         `}
@@ -134,7 +134,7 @@ const Navbar: React.FC = () => {
               className={`text-lg transition duration-300 ${
                 activeSection === link.toLowerCase()
                   ? "text-blue-600 font-bold"
-                  : "text-gray-700 hover:text-blue-600 hover:scale-105"
+                  : "text-white hover:text-blue-600 hover:scale-105"
               }`}
             >
               <a href={`#${link.toLowerCase()}`} onClick={() => setIsOpen(false)}>

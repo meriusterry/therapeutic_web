@@ -34,7 +34,7 @@ const Home: React.FC = () => (
             contactSection.scrollIntoView({ behavior: "smooth" });
           }
         }}
-        className="bg-green-600 text-white px-8 py-3 rounded-lg text-lg hover:bg-green-700 transform hover:scale-110 transition duration-500 animate-bounceIn delay-400"
+        className="bg-green-500 text-white px-8 py-3 rounded-lg text-lg hover:bg-green-700 transform hover:scale-110 transition duration-500 animate-bounceIn delay-400"
       >
         Contact Me
       </button>
